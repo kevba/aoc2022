@@ -69,3 +69,28 @@ func Time() func() {
 		log.Printf("solved in %v \n", time.Since(start))
 	}
 }
+
+func Set[T comparable](s []T) []T {
+	new := []T{}
+
+	for _, v := range s {
+		if !Contains(new, v) {
+			new = append(new, v)
+		}
+	}
+
+	return new
+}
+
+func Contains[T comparable](s []T, e T) bool {
+	return FindIndex(s, e) != -1
+}
+
+func FindIndex[T comparable](s []T, e T) int {
+	for i, v := range s {
+		if v == e {
+			return i
+		}
+	}
+	return -1
+}
