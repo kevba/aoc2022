@@ -48,7 +48,7 @@ func Atoi(s string) int {
 	return num
 }
 
-// Atoi converts a string to an int. It fatals when this is not possible.
+// AtoiSlice converts a string slice to an intSlice. It fatals when this is not possible.
 func AtoiSlice(s []string) []int {
 	ints := []int{}
 
