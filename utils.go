@@ -70,6 +70,21 @@ func Time() func() {
 	}
 }
 
+func ReverseSlice[T any](s []T) []T {
+	first := 0
+	last := len(s) - 1
+	n := make([]T, len(s))
+	copy(n, s)
+
+	for first < last {
+		n[first], n[last] = n[last], n[first]
+		first++
+		last--
+	}
+
+	return n
+}
+
 func Set[T comparable](s []T) []T {
 	new := []T{}
 
